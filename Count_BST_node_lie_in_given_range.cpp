@@ -85,11 +85,16 @@ int main()
 }
 
 
-/* Approach
+/*
+
+-------------------------------Approach--------------------------------
+
 --Its Done using Algorithm Of Level Order Traversal
 --Queue DataStructure is used to Store the Level Wise Nodes in it.
   --If root_data > upper limit ,then push root->left node into queue
   --If root_data< lower limit,the push root->right node into queue
   --else we push root node into queue
 --Next follow Level Order Traversal to count the nodes.
+
+-------------------------------------------------------------------------
 */
