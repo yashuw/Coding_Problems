@@ -90,6 +90,8 @@ geek  gesek
 
 4   k   4   3   2   2   2   1
 
+----Done using Dynamic Programming
+----Consider a 2D Matrix with size of s1 len as row size and s2 len as col size
 ----if s1[i]==s2[i] ,then consider diagonal value
 ----else consider min val of diagonal,left and top value
 
