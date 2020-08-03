@@ -10,17 +10,21 @@
 using namespace std;
 int reslt=0;
 
-int PowNaturalNumber(int n,int r,int k,int x)
+void PowNaturalNumber(int n,int r,int x)
 {
     if(n==0)
-        reslt++;
-    for(int i=k+1;i<=r;i++)
     {
-        int a=n-(int)pow(i,x);
-        if(a>=0)
-            PowNaturalNumber(a,r,i,x);
+        reslt++;
+        return;
     }
-    return reslt;
+    if(r<=0)
+        return;
+    if(n<0)
+        return;
+    int val=pow(r,x);
+    if(n>=val)
+        PowNaturalNumber(n-val,r-1,x);
+    PowNaturalNumber(n,r-1,x);
 }
 
 int main() {
@@ -30,8 +34,11 @@ int main() {
 	{
 	    int n,x;
 	    cin>>n>>x;
-	    int r=(int)floor(pow(n,1.0/x));
-	    cout<<PowNaturalNumber(n,r,0,x)<<"\n";
+	    int r;
+	    for(int i=1;pow(i,x)<=n;i++)
+            	r=i;
+	    PowNaturalNumber(n,r,x);
+	    cout<<reslt<<"\n";
 	    reslt=0;
 	}
 	return 0;
